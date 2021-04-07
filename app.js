@@ -33,7 +33,7 @@ let datefinal =
 //  + datetime.getMinutes() + ":" + datetime.getSeconds()
 
 //L'action ci dessous s'exécutera tous les jours à midi (12h00)
-cron.schedule("* 12 * * *", async () => {
+cron.schedule("00 */1 * * *", async () => {
   const downloader = new Downloader({
     url:
       "https://disease.sh/v3/covid-19/countries/France?yesterday=true&twoDaysAgo=true&strict=true&allowNull=true", //url du fichier, pour le personaliser -> https://disease.sh/docs/#/
