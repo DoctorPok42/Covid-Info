@@ -32,6 +32,7 @@ let datefinal =
 // Ce bout de code ci dessous peut être ajouter au reste pour avoir les minutes et secondes en plus
 //  + datetime.getMinutes() + ":" + datetime.getSeconds()
 
+//L'action ci dessous s'exécutera tous les jours à midi (12h00)
 cron.schedule("* 12 * * *", async () => {
   const downloader = new Downloader({
     url:
