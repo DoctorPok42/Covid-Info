@@ -39,3 +39,5 @@ Cette petite application en js est faite pour recueillir des informations sur le
 ```
 
 Toutes ces informations sont récupérées dans un fichier en `.json` qui est nomé par la `date de l'exécution` et stocker dans le dossier `downloads`
+
+Si vous souhaiter modifier le pays de sélection ou avoir des données globales du covid je vous invite à modifier la ligne `39` par un nouveau lien que vous pouvez générer à cette url : <a href="https://disease.sh/docs/" about="blank">Génére un autre lien</a>
