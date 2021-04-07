@@ -1,7 +1,14 @@
 # Covid-Info
-<br/>
-Cette petite application en js est faite pour recueillir des informations sur le covid en France, tel que :
-<br/>
+
+Cette petite application en js est faite pour recueillir automatiquement et de manière régulière les informations sur le covid en France. Pour ensuite les sauvegardé dans un fichier `json`
+
+Pour faire fonctionner ce programme, téléchargé-le entièrement puis à l'aide d'un terminal éxecuter le fichier apps.
+
+Si vous voules modifier le temps entre chaque téléchargement je vous invite à mofdifier la ligne `36` et pour plus d'information je vous renvoie sur la page du module utilisé https://www.npmjs.com/package/node-cron
+
+<hr>
+
+Voici toutes les informations que vous pouvez collecter :
 
  ```{
 {
@@ -40,4 +47,26 @@ Cette petite application en js est faite pour recueillir des informations sur le
 
 Toutes ces informations sont récupérées dans un fichier en `.json` qui est nomé par la `date de l'exécution` et stocker dans le dossier `downloads`
 
-Si vous souhaiter modifier le pays de sélection ou avoir des données globales du covid je vous invite à modifier la ligne `39` par un nouveau lien que vous pouvez générer à cette url : <a href="https://disease.sh/docs/" about="blank">Génére un autre lien</a>
+Si vous souhaiter modifier le pays de sélection ou avoir des données globales du covid je vous invite à modifier la ligne `39` par un nouveau lien que vous pouvez générer à cette url : <a href="https://disease.sh/docs/">Générer un autre lien</a>
+
+<hr>
+
+# Fonctionalité Discord
+Cette application peut aussi vous envoyer le fichier.json sur un channel discord !
+
+Pour ce faire il vous suffit de crée une application discord sur le <a href="https://discord.com/developers/applications">Pannel Développeur</a>, puis ensuite de copier le TOKEN du bot et le mettre dans le fichier `config.js` à la ligne `2`
+
+Enfin vous aurez besoin dans le fichier principale (app.js) de mettre l'id du channel discord, à la ligne `53`, sur lequel vous voulez envoyer le fichier.
+
+Petite présition les fichiers commenceront à être envoyés dans le channel à partir de la prochaine exécution du programme par le module cron.
+
+
+### ATTENTION !
+Si vous n'utiliser pas cette fonctionalitée vous pouver suprimmer les lignes `6 à 17` et `50 à 53`
+<hr>
+
+Les différents modules utilisé pour ce projet sont :
+ - discord.js
+ - fs
+ - node-cron
+ - nodejs-file-downloader
