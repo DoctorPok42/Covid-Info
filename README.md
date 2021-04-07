@@ -4,7 +4,9 @@ Cette petite application en js est faite pour recueillir automatiquement et de m
 
 Pour faire fonctionner ce programme, téléchargé-le entièrement puis à l'aide d'un terminal éxecuter le fichier apps.
 
-Si vous voules modifier le temps entre chaque téléchargement je vous invite à mofdifier la ligne `36` et pour plus d'information je vous renvoie sur la page du module utilisé https://www.npmjs.com/package/node-cron
+La tache cron (récupérer des infos sur le covid) s'éxécutera en boucle toutes les heures.
+
+Si vous voules modifier le temps entre chaque tache je vous invite à modifier la ligne `36` et pour plus d'information je vous renvoie sur la page du module utilisé https://www.npmjs.com/package/node-cron
 
 <hr>
 
