@@ -1,5 +1,4 @@
 const Discord = require("discord.js"),
-  fs = require("fs"),
   cron = require("node-cron"),
   Downloader = require("nodejs-file-downloader");
 
@@ -46,6 +45,7 @@ cron.schedule("00 */1 * * *", async () => {
     console.log("Téléchargement échoué\n" + datefinal, error);
   }
 
+  // Envoie du fichier sur un channel Discord [OPTIONAL]
   const dos = require(`./downloads/${datefinal}.json`);
 
   const embed = new Discord.MessageEmbed()
@@ -61,8 +61,5 @@ cron.schedule("00 */1 * * *", async () => {
     .addField("Tests", dos.tests, true)
     .setTimestamp();
 
-  // Envoie du fichier sur un channel Discord [OPTIONAL]
-  // const buffer = fs.readFileSync(`./downloads/${datefinal}.json`);
-  // const attachment = new Discord.MessageAttachment(buffer, `${datefinal}.json`);
   client.channels.cache.get("828995325922377779").send(embed);
 });
