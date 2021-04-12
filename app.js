@@ -29,7 +29,7 @@ let datefinal =
   (datetime.getMinutes() + 1);
 
 // Ce bout de code ci dessous peut être ajouter au reste pour avoir les minutes et secondes en plus
-//  + datetime.getMinutes() + ":" + datetime.getSeconds()
+//  + ":" + datetime.getSeconds()
 
 cron.schedule("00 */1 * * *", async () => {
   const downloader = new Downloader({
