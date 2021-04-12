@@ -32,11 +32,10 @@ let datefinal =
 // Ce bout de code ci dessous peut être ajouter au reste pour avoir les minutes et secondes en plus
 //  + datetime.getMinutes() + ":" + datetime.getSeconds()
 
-//L'action ci dessous s'exécutera tous les jours à midi (12h00)
 cron.schedule("00 */1 * * *", async () => {
   const downloader = new Downloader({
     url:
-      "https://disease.sh/v3/covid-19/countries/France?yesterday=true&twoDaysAgo=true&strict=true&allowNull=true", //url du fichier, pour le personaliser -> https://disease.sh/docs/#/
+      "https://disease.sh/v3/covid-19/countries/France?yesterday=true&twoDaysAgo=true&strict=true", //url du fichier, pour le personaliser -> https://disease.sh/docs/#/
     directory: "./downloads/", // dossier de stockage
     fileName: `${datefinal}.json`, // nom du fichier (la date actuelle)
   });
@@ -47,8 +46,23 @@ cron.schedule("00 */1 * * *", async () => {
     console.log("Téléchargement échoué\n" + datefinal, error);
   }
 
+  const dos = require(`./downloads/${datefinal}.json`);
+
+  const embed = new Discord.MessageEmbed()
+    .setAuthor(`${client.user.username}`, client.user.avatarURL())
+    .setColor("#39A275")
+    .setThumbnail(dos.countryInfo.flag)
+    .setTitle(`Les news du covid en ${dos.country} aujourd'hui !`)
+    .addField("Cas", dos.todayCases, true)
+    .addField("Morts", dos.todayDeaths, true)
+    .addField("Active", dos.active, true)
+    .addField("Soigné", dos.todayRecovered, true)
+    .addField("Réanimation", dos.critical, true)
+    .addField("Tests", dos.tests, true)
+    .setTimestamp();
+
   // Envoie du fichier sur un channel Discord [OPTIONAL]
-  const buffer = fs.readFileSync(`./downloads/${datefinal}.json`);
-  const attachment = new Discord.MessageAttachment(buffer, `${datefinal}.json`);
-  client.channels.cache.get("CHANNELID").send(attachment);
+  // const buffer = fs.readFileSync(`./downloads/${datefinal}.json`);
+  // const attachment = new Discord.MessageAttachment(buffer, `${datefinal}.json`);
+  client.channels.cache.get("828995325922377779").send(embed);
 });
