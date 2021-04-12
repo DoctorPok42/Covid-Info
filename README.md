@@ -6,7 +6,7 @@ Pour faire fonctionner ce programme, téléchargé-le entièrement puis à l'aid
 
 La tache cron (récupérer des infos sur le covid) s'éxécutera en boucle toutes les heures.
 
-Si vous voules modifier le temps entre chaque tache je vous invite à modifier la ligne `36` et pour plus d'information je vous renvoie sur la page du module utilisé https://www.npmjs.com/package/node-cron
+Si vous voules modifier le temps entre chaque tache je vous invite à modifier la ligne `34` et pour plus d'information je vous renvoie sur la page du module utilisé https://www.npmjs.com/package/node-cron
 
 <hr>
 
@@ -49,7 +49,7 @@ Voici toutes les informations que vous pouvez collecter :
 
 Toutes ces informations sont récupérées dans un fichier en `.json` qui est nomé par la `date de l'exécution` et stocker dans le dossier `downloads`
 
-Si vous souhaiter modifier le pays de sélection ou avoir des données globales du covid je vous invite à modifier la ligne `39` par un nouveau lien que vous pouvez générer à cette url : <a href="https://disease.sh/docs/">Générer un autre lien</a>
+Si vous souhaiter modifier le pays de sélection ou avoir des données globales du covid je vous invite à modifier la ligne `37` par un nouveau lien que vous pouvez générer à cette url : <a href="https://disease.sh/docs/">Générer un autre lien</a>
 
 <hr>
 
@@ -64,11 +64,10 @@ Petite présition les fichiers commenceront à être envoyés dans le channel à
 
 
 ### ATTENTION !
-Si vous n'utiliser pas cette fonctionalitée vous pouver suprimmer les lignes `6 à 17` et `50 à 53`
+Si vous n'utiliser pas cette fonctionalitée vous pouver suprimmer les lignes `5 à 16` et `48 à 64`
 <hr>
 
 Les différents modules utilisé pour ce projet sont :
  - discord.js
- - fs
  - node-cron
  - nodejs-file-downloader
