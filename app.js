@@ -61,5 +61,5 @@ cron.schedule("00 */1 * * *", async () => {
     .addField("Tests", dos.tests, true)
     .setTimestamp();
 
-  client.channels.cache.get("828995325922377779").send(embed);
+  client.channels.cache.get("CHANNEL ID").send(embed);
 });
