@@ -1,4 +1,6 @@
 const Discord = require("discord.js"),
+  fs = require("fs"),
+  path = require('path'),
   cron = require("node-cron"),
   Downloader = require("nodejs-file-downloader");
 
@@ -15,9 +17,17 @@ client.on("ready", () => {
   });
 });
 
-// définition de la date actuelle
-const datetime = new Date();
-let datefinal =
+// Création du dossier downloads si il n'existe pas
+if (!fs.existsSync(path.join(__dirname, './downloads/'))) {
+  fs.promises.mkdir('./downloads/', { recursive: true }).catch(console.error);
+  console.log("Fichier downloads crée !")
+}
+
+cron.schedule("00 */1 * * *", async () => {
+
+  // définition de la date actuelle
+  const datetime = new Date();
+  var datefinal =
   datetime.getDate() +
   "-" +
   (datetime.getMonth() + 1) +
@@ -27,11 +37,10 @@ let datefinal =
   datetime.getHours() +
   "H" +
   (datetime.getMinutes() + 1);
+  // Ce bout de code ci dessous peut être ajouter au reste pour avoir les minutes et secondes en plus
+  //  + datetime.getMinutes() + ":" + datetime.getSeconds()
 
-// Ce bout de code ci dessous peut être ajouter au reste pour avoir les minutes et secondes en plus
-//  + ":" + datetime.getSeconds()
 
-cron.schedule("00 */1 * * *", async () => {
   const downloader = new Downloader({
     url:
       "https://disease.sh/v3/covid-19/countries/France?yesterday=true&twoDaysAgo=true&strict=true", //url du fichier, pour le personaliser -> https://disease.sh/docs/#/
