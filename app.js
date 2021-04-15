@@ -2,7 +2,8 @@ const Discord = require("discord.js"),
   fs = require("fs"),
   path = require('path'),
   cron = require("node-cron"),
-  Downloader = require("nodejs-file-downloader");
+  Downloader = require("nodejs-file-downloader"),
+  moment = require('moment');
 
 const client = new Discord.Client();
 client.config = require("./config");
@@ -56,6 +57,7 @@ cron.schedule("00 */1 * * *", async () => {
 
   // Envoie du fichier sur un channel Discord [OPTIONAL]
   const dos = require(`./downloads/${datefinal}.json`);
+  const ch = message.guilds
 
   const embed = new Discord.MessageEmbed()
     .setAuthor(`${client.user.username}`, client.user.avatarURL())
@@ -69,6 +71,7 @@ cron.schedule("00 */1 * * *", async () => {
     .addField("Réanimation", dos.critical, true)
     .addField("Tests", dos.tests, true)
     .addField("Population", dos.population, true)
+    .addField("Update", moment(dos.updated).fromNow())
     .setTimestamp();
 
   client.channels.cache.get("CHANNEL ID").send(embed);
