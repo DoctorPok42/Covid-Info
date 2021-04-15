@@ -69,5 +69,7 @@ Si vous n'utiliser pas cette fonctionalitée vous pouver suprimmer les lignes `5
 
 Les différents modules utilisé pour ce projet sont :
  - discord.js
+ - fs
+ - path
  - node-cron
  - nodejs-file-downloader
