@@ -12,7 +12,7 @@ client.login(client.config.TOKEN);
 client.on("ready", () => {
   console.log("Le bot est lancé !");
   client.user.setPresence({
-    activity: { name: "Les infos sur le covid", type: "WATCHING" },
+    activity: { name: client.config.ACTIVITY, type: "WATCHING" },
     status: "idle",
   });
 });
@@ -68,6 +68,7 @@ cron.schedule("00 */1 * * *", async () => {
     .addField("Soigné", dos.todayRecovered, true)
     .addField("Réanimation", dos.critical, true)
     .addField("Tests", dos.tests, true)
+    .addField("Population", dos.population, true)
     .setTimestamp();
 
   client.channels.cache.get("CHANNEL ID").send(embed);
