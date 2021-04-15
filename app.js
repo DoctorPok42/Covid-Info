@@ -43,7 +43,7 @@ cron.schedule("00 */1 * * *", async () => {
 
   const downloader = new Downloader({
     url:
-      "https://disease.sh/v3/covid-19/countries/France?yesterday=true&twoDaysAgo=true&strict=true", //url du fichier, pour le personaliser -> https://disease.sh/docs/#/
+      "https://disease.sh/v3/covid-19/countries/France?yesterday=true&twoDaysAgo=true&strict=true",// url du fichier, pour le personaliser -> https://disease.sh/docs/#/
     directory: "./downloads/", // dossier de stockage
     fileName: `${datefinal}.json`, // nom du fichier (la date actuelle)
   });
@@ -56,7 +56,7 @@ cron.schedule("00 */1 * * *", async () => {
 
   // Envoie du fichier sur un channel Discord [OPTIONAL]
   const dos = require(`./downloads/${datefinal}.json`);
-  const ch = message.guild.channels.cache.find(ch => ch.id=== "CHANNELID") || message.guild.channels.cache.find(ch => ch.name=== "CHANNEL NAME");// l'id du channel ou le nom du channel, attention il ne faut pas mettre les deux à la fois
+  const ch = message.guild.channels.cache.find(ch => ch.id=== "CHANNELID");// l'id du channel
 
   const embed = new Discord.MessageEmbed()
     .setAuthor(`${client.user.username}`, client.user.avatarURL())
