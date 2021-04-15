@@ -41,7 +41,6 @@ cron.schedule("00 */1 * * *", async () => {
   // Ce bout de code ci dessous peut être ajouter au reste pour avoir les minutes et secondes en plus
   //  + datetime.getMinutes() + ":" + datetime.getSeconds()
 
-
   const downloader = new Downloader({
     url:
       "https://disease.sh/v3/covid-19/countries/France?yesterday=true&twoDaysAgo=true&strict=true", //url du fichier, pour le personaliser -> https://disease.sh/docs/#/
