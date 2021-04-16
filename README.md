@@ -13,7 +13,7 @@ Vous avez maintenant **2 possibilités** pour l'ancer l'application :
 
 La **tache cron** (récupérer des infos sur le covid) s'éxécutera en boucle toutes les heures.
 
-Si vous voules modifier le temps entre chaque tache je vous invite à modifier la ligne `27` et pour plus d'information je vous renvoie sur la page du module utilisé https://www.npmjs.com/package/node-cron
+Si vous voulez modifier le temps entre chaque tache je vous invite à modifier la ligne `27` et pour plus d'information je vous renvoie sur la page du module utilisé https://www.npmjs.com/package/node-cron
 
 <hr>
 
@@ -54,30 +54,30 @@ Voici toutes les informations que vous pouvez collecter :
 }
 ```
 
-Toutes ces informations sont récupérées dans un fichier en `.json` qui est nomé par la `date de l'exécution` et stocker dans le dossier `downloads`
+Toutes ces informations sont récupérées dans un fichier en `.json` qui est nomé par la `date de l'exécution` et stocké dans le dossier `downloads`
 
-Si vous souhaiter modifier le pays de sélection ou avoir des données globales du covid je vous invite à modifier la ligne `46` par un nouveau lien que vous pouvez générer à cette url : <a href="https://disease.sh/docs/">Générer un autre lien</a>
+Si vous souhaitez modifier le pays de sélection ou avoir des données globales du covid je vous invite à modifier la ligne `46` par un nouveau lien que vous pouvez générer à cette url : <a href="https://disease.sh/docs/">Générer un autre lien</a>
 
 <hr>
 
 # Fonctionalité Discord
-Cette application peut aussi vous envoyer le fichier.json sur un channel discord !
+Cette application peut aussi vous envoyer un message sur un channel discord !
 
-Pour ce faire il vous suffit de crée une application discord sur le <a href="https://discord.com/developers/applications">Pannel Développeur</a>, puis ensuite de copier le TOKEN du bot et le mettre dans le fichier `config.js` à la ligne `2`<br/>
+Pour ce faire il vous suffit de créer une application discord sur le <a href="https://discord.com/developers/applications">Pannel Développeur</a>, puis ensuite de copier le TOKEN du bot et le mettre dans le fichier `config.js` à la ligne `2`<br/>
 Vous pouvez aussi changer la courte phrase de la ligne `3` pour mettre quelque chose de plus personnel.
 
-Enfin vous aurez besoin dans le fichier principale (app.js) de mettre l'id du channel discord, à la ligne `59`, sur lequel vous voulez envoyer le message.
+Enfin vous aurez besoin dans le fichier principal (app.js) de mettre l'id du channel discord, à la ligne `59`, sur lequel vous voulez envoyer le message.
 
-Petite présition les messages commenceront à être envoyés dans le channel à partir de la prochaine exécution du programme par le module cron .
+Petite précision les messages commenceront à être envoyés dans le channel à partir de la prochaine exécution du programme par le module cron .
 
 
 ## ⚠️ ATTENTION ⚠️
-Si vous n'utiliser pas cette fonctionalitée vous pouver suprimmer les lignes `8 à 19` et `57 à 76`
+Si vous n'utilisez pas cette fonctionalité vous pouvez suprimmer les lignes `8 à 19` et `57 à 76`
 
 Sinon vous riquez d'avoir des erreurs.
 <hr>
 
-Les différents modules utilisé pour ce projet sont :
+Les différents modules utilisés pour ce projet sont :
  - discord.js
  - fs
  - path
