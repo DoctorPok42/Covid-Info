@@ -56,7 +56,6 @@ cron.schedule("00 */1 * * *", async () => {
 
   // Envoie du fichier sur un channel Discord [OPTIONAL]
   const dos = require(`./downloads/${datefinal}.json`);
-  const ch = message.guild.channels.cache.find(ch => ch.id=== "CHANNELID");// l'id du channel
 
   const embed = new Discord.MessageEmbed()
     .setAuthor(`${client.user.username}`, client.user.avatarURL())
@@ -70,8 +69,8 @@ cron.schedule("00 */1 * * *", async () => {
     .addField("Réanimation", dos.critical, true)
     .addField("Tests", dos.tests, true)
     .addField("Population", dos.population, true)
-    .addField("Update", moment(dos.updated).fromNow())
+    .addField("Update", moment(dos.updated).fromNow(), true)
     .setTimestamp();
 
-  ch.send(embed);
+    client.channels.cache.get('CHANNELID').send(embed);// l'id du channel
 });
