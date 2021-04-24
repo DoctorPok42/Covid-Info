@@ -1,15 +1,15 @@
 # Covid-Info
 
-Cette petite application en js est faite pour recueillir automatiquement et de manière régulière les informations sur le covid en France. Pour ensuite les sauvegardé dans un fichier `json`
+Cette petite application en js est faite pour recueillir automatiquement et de manière régulière les informations sur le covid19. Pour ensuite les sauvegardé dans un fichier `json`
 
 # Lancer l'application
 Pour faire fonctionner cette application, téléchargé-la entièrement !
 
 Puis à l'aide d'un terminal éxecuter le fichier apps.
 
-La tache cron (récupérer des infos sur le covid) s'éxécutera en boucle tous les jours à 14h30.
+La tache cron (récupérer des infos sur la covid19) s'éxécutera en boucle tous les jours à 14h30.
 
-Si vous voules modifier le temps entre chaque tache je vous invite à modifier la ligne 34 et pour plus d'information je vous renvoie sur la page du module utilisé https://www.npmjs.com/package/node-cron
+Si vous voules modifier le temps entre chaque tache je vous invite à modifier la ligne `12` et pour plus d'information je vous renvoie sur la page du module utilisé https://www.npmjs.com/package/node-cron
 
 <hr/>
 
