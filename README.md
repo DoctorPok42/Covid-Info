@@ -1,4 +1,4 @@
-# Covid-Info
+# Covid-Info [![CodeFactor](https://www.codefactor.io/repository/github/doctorpok42/covid-info/badge)](https://www.codefactor.io/repository/github/doctorpok42/covid-info)
 
 Cette petite application en js est faite pour recueillir automatiquement et de manière régulière les informations sur le covid19. Pour ensuite les sauvegardé dans un fichier `json`
 
