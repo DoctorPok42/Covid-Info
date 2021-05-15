@@ -61,3 +61,8 @@ Les différents modules utilisés pour ce projet sont :
  - path
  - node-cron
  - nodejs-file-downloader
+
+```Js
+- DoctorPok
+- Serveur Discord https://discord.gg/invite/RRZ6JnuPhM
+```
