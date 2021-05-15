@@ -23,7 +23,7 @@ cron.schedule("30 14 * * *", async () => {
   datetime.getHours() +
   "H" +
   (datetime.getMinutes() + 1);
-  // Ce bout de code ci dessous peut être ajouter au reste pour avoir les minutes et secondes en plus
+  // Ce bout de code ci dessous peut être ajouter au reste pour avoir les secondes en plus sur le nom du fichier et le reste
   //  + ":" + datetime.getSeconds()
 
   const downloader = new Downloader({
